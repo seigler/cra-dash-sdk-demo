@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Dash from 'dash';
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [status, setStatus] = useState('Loading...');
+  // try {
+    const sdk = new Dash.SDK();
+  // } catch (e) {
+  //   console.error('Error at "new":', e);
+  //   setStatus('Error at "new" (see console)')
+  // }
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Status: {status}
         </p>
         <a
           className="App-link"
